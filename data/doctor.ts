@@ -1,0 +1,63 @@
+﻿export const doctor = {
+  name:                 'Dr. Snigdha Hegde',
+  clinicName:           'Skin Code',
+  qualification:        'MBBS, MD (Dermatology, Venereology & Leprosy)',
+  qualificationFull:    'K S Hegde Medical Academy, Nitte (Deemed to be University)',
+  title:                'Consultant Dermatologist | Aesthetic Dermatologist | Trichologist',
+  tagline:              'Your Skin Deserves Expert Care.',
+  subTagline:           'Advanced Dermatology, Aesthetic & Trichology Solutions in Mangaluru',
+  experienceYears:      '9+',
+  specialisationsCount: '12+',
+  bio: `Dr. Snigdha Hegde is a Consultant Dermatologist, Aesthetic Dermatologist, and Trichologist with over 9 years of experience in Dermatology, Cosmetology, and Trichology. Through her practice, Skin Code, she is dedicated to enhancing and preserving skin and hair health with comprehensive consultations, expert advice, and advanced treatments.  Dr. Hegde previously served as an Assistant Professor at Justice K.S. Hegde Charitable Hospital and as a Senior Resident at Kasturba Medical College, Manipal.`,
+  image: 'https://fayumi.in/public/upload/doctors/doctors.jpg',
+  affiliations: [
+    {
+      role:   'Consultant Dermatologist',
+      place:  'Skin Code by Dr Snigdha, Mangaluru',
+      period: 'January 2024 – Present',
+    },
+    {
+      role:   'Assistant Professor',
+      place:  'Justice K.S. Hegde Charitable Hospital, Mangaluru',
+      period: 'January 2021 – October 2025',
+    },
+    {
+      role:   'Senior Resident',
+      place:  'Kasturba Medical College, Manipal',
+      period: 'November 2019 – December 2020',
+    },
+    {
+      role:   'Resident Doctor',
+      place:  'Justice K.S. Hegde Charitable Hospital, Mangaluru',
+      period: 'May 2016 – April 2019',
+    },
+  ],
+  specialties: [
+    'Aesthetic Dermatology',
+    'Anti-Ageing & Skin Rejuvenation',
+    'PRP & Hair Restoration',
+    'Chemical Peeling',
+    'Carbon Laser Toning',
+    'Laser Hair Removal',
+    'Laser Tattoo Removal',
+    'Acne Treatment',
+    'Vitiligo & Pigmentary Disorders',
+    'Psoriasis & Nail Disorders',
+    'Keloid & Scar Reduction',
+    'Trichology (Hair & Scalp)',
+  ],
+  // legacy fields kept so no component breaks
+  experience:         9,
+  patientsServed:     0,
+  satisfactionRate:   100,
+  specialistsOnStaff: 1,
+  patientsRecovered:  0,
+  awards: [],
+  education: [
+    {
+      degree:      'MBBS, MD – Dermatology, Venereology & Leprosy',
+      institution: 'K S Hegde Medical Academy, Nitte (Deemed to be University)',
+      year:        '2019',
+    },
+  ],
+}

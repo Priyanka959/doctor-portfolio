@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-medical-primary: #1A6DB5;
+  --color-medical-accent: #0EA5E9;
+  --color-medical-light: #EFF6FF;
+  --color-medical-dark: #0A1628;
+  --color-medical-highlight: #0F3460;
+  
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-medical-light text-gray-800;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
