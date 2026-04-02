@@ -9,7 +9,7 @@
   experienceYears:      '9+',
   specialisationsCount: '12+',
   bio: `Dr. Snigdha Hegde is a Consultant Dermatologist, Aesthetic Dermatologist, and Trichologist with over 9 years of experience in Dermatology, Cosmetology, and Trichology. Through her practice, Skin Code, she is dedicated to enhancing and preserving skin and hair health with comprehensive consultations, expert advice, and advanced treatments.  Dr. Hegde previously served as an Assistant Professor at Justice K.S. Hegde Charitable Hospital and as a Senior Resident at Kasturba Medical College, Manipal.`,
-  image: 'https://fayumi.in/public/upload/doctors/doctors.jpg',
+  image: '/images/doctor.jpg',
   affiliations: [
     {
       role:   'Consultant Dermatologist',

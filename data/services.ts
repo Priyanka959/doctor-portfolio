@@ -53,22 +53,6 @@
     fullDesc:  'Specialized care for vitiligo, melasma, and other pigmentary conditions with the latest therapeutic and light-based treatments.',
     slug: 'vitiligo-pigmentary',
   },
-  {
-    id: 'psoriasis-nail', name: 'Psoriasis & Nail Disorders', icon: '🩺',
-    shortDesc: 'Evidence-based treatment for psoriasis and nail disorders to achieve long-term remission.',
-    fullDesc:  'Evidence-based treatment for chronic skin conditions including psoriasis, nail psoriasis, and related disorders to achieve long-term remission.',
-    slug: 'psoriasis-nail',
-  },
-  {
-    id: 'keloid-scar', name: 'Keloid & Scar Reduction', icon: '🩹',
-    shortDesc: 'Targeted treatments to minimize keloids, hypertrophic scars, and post-surgical scars.',
-    fullDesc:  'Targeted treatments to minimize the appearance of keloids, hypertrophic scars, and post-surgical scars for smoother skin.',
-    slug: 'keloid-scar',
-  },
-  {
-    id: 'trichology', name: 'Trichology – Hair & Scalp', icon: '🌿',
-    shortDesc: 'Comprehensive diagnosis and treatment of hair loss, dandruff, and scalp disorders.',
-    fullDesc:  'Comprehensive diagnosis and treatment of hair loss, dandruff, scalp disorders, and other trichological conditions.',
-    slug: 'trichology',
-  },
+  
+ 
 ]

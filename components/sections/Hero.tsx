@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, Award, ShieldCheck } from "lucide-react";
 import { doctor } from "../../data/doctor";
@@ -33,11 +34,6 @@ export default function Hero() {
           animate="show" 
           className="flex-1 text-center lg:text-left pt-10 lg:pt-0"
         >
-          <motion.div variants={item} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-medical-light text-medical-primary font-medium text-sm mb-6 shadow-sm border border-teal-100">
-            <Sparkles size={16} />
-            <span>Premium Dermatology & Aesthetics</span>
-          </motion.div>
-
           <motion.h1 
             variants={item} 
             className="text-5xl sm:text-6xl md:text-7xl font-serif font-bold text-gray-900 leading-[1.1] mb-6"
@@ -56,10 +52,10 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <button className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-gray-900/20">
+            <a href="#contact" className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-gray-900/20">
               Book Consultation
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <a href="#services" className="w-full sm:w-auto px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-full font-medium hover:bg-gray-50 transition-all flex items-center justify-center">
               Explore Services
             </a>
@@ -95,10 +91,12 @@ export default function Hero() {
         >
           {/* Main Image Container */}
           <div className="relative aspect-[4/5] rounded-[2rem] rounded-tl-[6rem] rounded-br-[6rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
-            <img 
+            <Image 
               src={doctor.image} 
               alt={doctor.name} 
-              className="object-cover w-full h-full hover:scale-105 transition-transform duration-700" 
+              fill
+              priority
+              className="object-cover hover:scale-105 transition-transform duration-700" 
             />
             {/* Elegant overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent pointer-events-none" />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { contactInfo } from "../../data/contact";
 import { useState } from "react";
 
@@ -18,10 +18,10 @@ export default function WhatsAppButton() {
         animate={{ scale: 1 }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        className="flex items-center gap-3 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow relative"
+        className={`flex items-center justify-center bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all relative ${hover ? "gap-3" : ""}`}
       >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
-        <MessageCircle size={28} className="relative z-10" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75 hidden group-hover:block"></span>
+        <FaWhatsapp size={32} className="relative z-10 shrink-0" />
         <motion.span
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: hover ? "auto" : 0, opacity: hover ? 1 : 0 }}
