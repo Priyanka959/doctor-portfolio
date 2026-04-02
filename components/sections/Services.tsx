@@ -15,7 +15,7 @@ export default function Services() {
           <p className="text-gray-600">Comprehensive healthcare services tailored to your individual needs, delivered with compassion and excellence.</p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+        <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 snap-x snap-mandatory">
           {services.map((service, i) => {
             return (
               <motion.div
@@ -24,7 +24,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group bg-white p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-medical-accent/30 transition-all duration-300 relative overflow-hidden cursor-pointer"
+                className="group bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-medical-accent/30 transition-all duration-300 relative overflow-hidden cursor-pointer min-w-[280px] w-[80vw] sm:min-w-0 sm:w-auto shrink-0 snap-center"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-medical-light rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
                 

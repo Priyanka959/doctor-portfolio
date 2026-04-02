@@ -19,24 +19,29 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     setIsOpen(false);
-    const el = document.getElementById(id.toLowerCase());
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      const el = document.getElementById(id.toLowerCase());
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 100);
   };
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-gray-100 ${
-        scrolled ? "py-3 shadow-sm" : "py-5"
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 backdrop-blur-md bg-white/95 border-b border-gray-100 ${
+        scrolled ? "shadow-sm" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection("home")}>
           <Stethoscope className="text-medical-accent" size={28} />
           <div className="flex flex-col">
-            <span className="text-medical-primary font-serif text-2xl font-bold leading-tight">Skin Code</span>
-            <span className="text-gray-500 text-sm">Dr. Snigdha Hegde &bull; Dermatologist</span>
+            <span className="text-medical-primary font-serif md:text-2xl text-xl font-bold leading-tight">Dr. Snigdha Hegde</span>
+            <span className="text-gray-500 text-xs md:text-sm hidden sm:block">Dermatologist</span>
           </div>
         </div>
 

@@ -25,7 +25,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="pt-24 pb-12 md:py-24 bg-white overflow-hidden">
+    <section id="about" className="pt-12 pb-12 md:pt-16 md:pb-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 md:gap-16 items-center">
 
@@ -34,9 +34,9 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="flex-1 relative w-full max-w-xs md:max-w-md lg:max-w-lg mx-auto lg:mr-0 mt-8 lg:mt-0"
           >
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border-8 border-white shadow-2xl max-w-xs md:max-w-md mx-auto">
+              <div className="relative rounded-[2rem] rounded-tl-[6rem] rounded-br-[6rem] overflow-hidden aspect-[4/5] border-8 border-white shadow-2xl bg-white w-full mx-auto">
                 <Image src={doctor.image} alt={doctor.name} fill className="object-cover" />
               </div>
 

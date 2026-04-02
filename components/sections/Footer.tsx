@@ -5,10 +5,10 @@ import { doctor } from "../../data/doctor";
 export default function Footer() {
   return (
     <footer className="bg-medical-dark text-white relative border-t-4 border-medical-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 font-serif text-2xl font-bold mb-6">
               <Stethoscope className="text-medical-accent" size={32} />
               <span>Skin Code</span>
@@ -52,7 +52,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h4 className="font-serif font-bold text-xl mb-6">Contact Us</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><strong className="text-white block mb-1">Address:</strong> {contactInfo.address.full}</li>
