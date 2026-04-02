@@ -1,85 +1,105 @@
 ﻿"use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { doctor } from "../../data/doctor";
-import { GraduationCap, Hospital, Trophy } from "lucide-react";
+import { GraduationCap, Hospital, Trophy, HeartPulse } from "lucide-react";
 
 export default function About() {
   const features = [
     {
-      icon:  GraduationCap,
+      icon: GraduationCap,
       title: doctor.qualification,
-      sub:   doctor.qualificationFull,
+      sub: doctor.qualificationFull,
+      color: "text-blue-500",
+      bg: "bg-blue-50",
     },
     {
-      icon:  Hospital,
-      title: `Specialization: ${doctor.specialties[0]} & more`,
-      sub:   'Aesthetic, Trichology, Laser & Medical Dermatology',
+      icon: Hospital,
+      title: `Specialization: ${doctor.specialties[0]}`,
+      sub: 'Aesthetic, Trichology, Laser & Medical',
+      color: "text-teal-500",
+      bg: "bg-teal-50",
     },
     {
-      icon:  Trophy,
+      icon: Trophy,
       title: doctor.affiliations[0].role,
-      sub:   `${doctor.affiliations[0].place} · ${doctor.affiliations[0].period}`,
+      sub: `${doctor.affiliations[0].place} · ${doctor.affiliations[0].period}`,
+      color: "text-amber-500",
+      bg: "bg-amber-50",
+    },
+    {
+      icon: HeartPulse,
+      title: `${doctor.experienceYears} Years Experience`,
+      sub: "Dedicated to providing exceptional care",
+      color: "text-pink-500",
+      bg: "bg-pink-50",
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+
   return (
-    <section id="about" className="pt-12 pb-12 md:pt-16 md:pb-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 md:gap-16 items-center">
+    <section id="about" className="pt-16 pb-16 md:pt-24 md:pb-24 bg-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-medical-light/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-50/40 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
 
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 relative w-full max-w-xs md:max-w-md lg:max-w-lg mx-auto lg:mr-0 mt-8 lg:mt-0"
-          >
-              <div className="relative rounded-[2rem] rounded-tl-[6rem] rounded-br-[6rem] overflow-hidden aspect-[4/5] border-8 border-white shadow-2xl bg-white w-full mx-auto">
-                <Image src={doctor.image} alt={doctor.name} fill className="object-cover" />
-              </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          className="text-center max-w-4xl mx-auto mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="mb-4 text-teal-600 font-bold uppercase tracking-widest text-sm">Meet Your Doctor</div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+            Dedicated to Your Health & Wellbeing
+          </h2>
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
+            {doctor.bio}
+          </p>
+        </motion.div>
 
-            <div className="absolute -bottom-6 -right-6 md:right-12 bg-white p-5 rounded-2xl shadow-xl border-l-4 border-medical-accent">
-              <p className="font-serif font-bold text-xl text-medical-dark">{doctor.experienceYears} Years</p>
-              <p className="text-gray-500 text-sm font-medium">in Practice</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="mb-2 text-teal-500 font-bold uppercase tracking-widest text-sm">About Me</div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-medical-dark mb-6 leading-tight">
-              Dedicated to Your Health & Wellbeing
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              {doctor.bio}
-            </p>
-
-            <div className="space-y-6 mb-10">
-              {features.map((feature, idx) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl hover:bg-medical-light/50 transition-colors border border-transparent hover:border-gray-100">
-                    <div className="bg-medical-light p-3 rounded-lg text-medical-primary">
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-serif font-bold text-medical-dark text-lg">{feature.title}</h4>
-                      <p className="text-gray-600">{feature.sub}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-          </motion.div>
-
-        </div>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 snap-x snap-mandatory"
+        >
+          {features.map((feature, idx) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div 
+                key={idx} 
+                variants={itemVariants}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="bg-white p-8 rounded-3xl shadow-xl shadow-teal-900/5 border border-gray-100 flex flex-col items-center text-center group min-w-[280px] w-[80vw] sm:min-w-0 sm:w-auto shrink-0 snap-center relative overflow-hidden"
+              >
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 ${feature.bg} ${feature.color} relative z-10`}>
+                  <Icon size={32} strokeWidth={1.5} />
+                </div>
+                <h4 className="font-serif font-bold text-gray-900 text-xl mb-3 relative z-10">{feature.title}</h4>
+                <p className="text-gray-500 text-sm leading-relaxed relative z-10">{feature.sub}</p>
+                <div className={`absolute -bottom-8 -right-8 w-32 h-32 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-2xl ${feature.bg}`}></div>
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </section>
   );
