@@ -48,7 +48,7 @@ export default function About() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
   };
 
   return (
@@ -81,11 +81,11 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 snap-x snap-mandatory"
         >
-          {features.map((feature, idx) => {
+          {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div 
-                key={idx} 
+                key={feature.title} 
                 variants={itemVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="bg-white p-8 rounded-3xl shadow-xl shadow-teal-900/5 border border-gray-100 flex flex-col items-center text-center group min-w-[280px] w-[80vw] sm:min-w-0 sm:w-auto shrink-0 snap-center relative overflow-hidden"
